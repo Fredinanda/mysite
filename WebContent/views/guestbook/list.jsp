@@ -43,6 +43,12 @@
 			for( GuestbookVo vo : list ){
 				index++;
 			%>
+			<%-- <c:forEach items="${list }" var="vo">  
+			
+			
+			</c:forEach>
+			--%>
+			
 			<br>
 			<table width=510 border=1>
 				<tr>
