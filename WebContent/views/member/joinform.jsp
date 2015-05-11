@@ -52,7 +52,7 @@
 			<jsp:include page="/views/include/navigation.jsp"/>
 		</div>
 		<div id="footer">
-			<jsp:include page="/views/include/footer.jsp"/>
+			<c:import url="/views/include/footer.jsp"></c:import>
 		</div>
 	</div>
 </body>

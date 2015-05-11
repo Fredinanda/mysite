@@ -1,7 +1,7 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%
-	String no = request.getParameter( "no" );
-%>
+
+
 <!doctype html>
 <html>
 <head>
@@ -18,7 +18,7 @@
 			<div id="guestbook" class="delete-form">
 				<form method="post" action="/mysite/gb">
 					<input type="hidden" name="a" value="delete">
-					<input type='hidden' name="no" value="<%=no%>">
+					<input type='hidden' name="no" value="${param.no }">
 					<label>비밀번호</label>
 					<input type="password" name="password">
 					<input type="submit" value="확인">
@@ -27,10 +27,14 @@
 			</div>
 		</div>
 		<div id="navigation">
-			<jsp:include page = "/views/include/navigation.jsp" flush = "false"/>
+			
+			<c:import url="/views/include/navigation.jsp" >
+			<c:param name="type" value="guest"></c:param>
+			</c:import>
+			
 		</div>
 		<div id="footer">
-			<jsp:include page = "/views/include/footer.jsp" flush = "false"/>
+			<c:import url="/views/include/footer.jsp"></c:import>
 		</div>
 	</div>
 </body>

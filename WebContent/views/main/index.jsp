@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <!doctype html>
 <html>
@@ -9,7 +10,9 @@
 <body>
 	<div id="container">
 		<div id="header">
-			<jsp:include page="/views/include/header.jsp" flush="false"/>
+		
+			<c:import url="/views/include/header.jsp"></c:import>
+			
 		</div>
 		<div id="wrapper">
 			<div id="content">
@@ -27,10 +30,14 @@
 			</div>
 		</div>
 		<div id="navigation">
-			<jsp:include page="/views/include/navigation.jsp"/>
+		
+			<c:import url="/views/include/navigation.jsp">
+			<c:param name="type" value="main"></c:param>
+			</c:import>
 		</div>
 		<div id="footer">
-			<jsp:include page="/views/include/footer.jsp"/>
+			
+			<c:import url="/views/include/footer.jsp"></c:import>
 		</div>
 	</div>
 </body>

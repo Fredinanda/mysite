@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="com.sds.icto.mysite.guestbook.dao.*" %>
 <%@ page import="com.sds.icto.mysite.guestbook.vo.*" %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page import="java.util.List" %>
 <%
 	GuestbookDao dao = new GuestbookDao();
@@ -66,10 +66,13 @@
 			</div>
 		</div>
 		<div id="navigation">
-			<jsp:include page="/views/include/navigation.jsp"/>
+		
+			<c:import url="/views/include/navigation.jsp" >
+			<c:param name="type" value="guest"></c:param>
+			</c:import>
 		</div>
 		<div id="footer">
-			<p>(c)opyright 2014 </p>
+			<c:import url="/views/include/footer.jsp"></c:import>
 		</div>
 	</div>
 </body>
