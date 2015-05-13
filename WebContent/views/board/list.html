@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>게시판</title>
+<style type="text/css" media="screen">
+*
+{ margin:0; padding:0 }
+
+body
+{ font-family: '맑은 고딕' 돋움; font-size:0.75em; color:#333 }
+
+.tbl-ex { 
+margin: 10px auto 0 auto;
+border: 1px solid #111;
+border-collapse:collapse;
+border-left-width: 0;
+border-right-width: 0;
+
+}
+
+.tbl-ex th, .tbl-ex td {
+border: 1px solid #111;
+padding:8px;
+border-left-width: 0;
+border-right-width: 0;
+cursor: pointer;
+
+
+}
+.tbl-ex .title {
+width: 300px;
+text-align: center;
+}
+
+.tbl-ex th {
+background-color: orange;
+border-bottom-width: 2px;
+border-top-width:2px;
+color: white;
+font-size: 1.1em;
+}
+
+.tbl-ex td{
+border-style: dotted;
+
+}
+
+.tbl-ex tr:HOVER {
+background-color: orange;
+}
+.tbl-ex tr:ACTIVE {
+	background-color: black;
+}
+
+.page{
+	text-align: center;
+}
+
+.write{
+	text-align: center;
+}
+
+</style>
+</head>
+<body>
+	<div align="center">
+	<img src="/mysite/views/board/images/smd.png" 	width="540px">
+	</div>
+	
+	<table class="tbl-ex" border="1">
+		<tr>
+			<th>no</th>
+			<th class="title">title</th>
+			<th>name</th>
+			<th>date</th>
+			<th>hit</th>
+		</tr>
+				<tr>
+				
+				<td>1</td>
+				<td class="title"><a href="select.html">1등이다</a></td>
+				<td> 제민재</td>
+				<td>2015-05-13</td>
+				<td>302</td>
+				
+			</tr>
+		
+	</table>
+	
+	<div class="page"> 1 </div>
+	<div class="write">
+	<a href="write.html">글쓰기</a>
+	</div>
+</body>
+</html>
