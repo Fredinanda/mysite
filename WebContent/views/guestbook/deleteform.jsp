@@ -10,6 +10,7 @@
 <link href="/mysite/assets/css/guestbook.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+
 	<div id="container">
 		<div id="header">
 			<jsp:include page = "/views/include/header.jsp" flush="false"/>
