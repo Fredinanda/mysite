@@ -91,11 +91,17 @@ public class boardDao {
 				Long no2 = rs.getLong(1);
 				String title2 = rs.getString(2);
 				String content2 = rs.getString(3);
-				String memberNo2 = rs.getString(4);
+				Long memberNo2 = rs.getLong(4);
 				String memberName2 = rs.getString(5);
 				String date2 = rs.getString(6);
 								
 				vo = new boardVo();
+				vo.setNo(no2);
+				vo.setTitle(title2);
+				vo.setContent(content2);
+				vo.setMemberNo(memberNo2);
+				vo.setMemberName(memberName2);
+				vo.setDate(date2);
 			}
 			if (rs != null) {
 				rs.close();
@@ -109,6 +115,24 @@ public class boardDao {
 			return vo;
 		}
 	
+		public void update(boardVo update) throws ClassNotFoundException, SQLException {
+			Connection conn = getConnection();
+			String sql = "update board set title=?, content=? where no=?";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, update.getTitle());
+			pstmt.setString(2, update.getContent());
+			pstmt.setLong(3, update.getNo());
+			pstmt.executeUpdate();
+			
+			if (pstmt != null) {
+				pstmt.close();
+			}
+
+			if (conn != null) {
+				conn.close();
+			}
+		}
+		
 	
 	private Connection getConnection()
 			throws ClassNotFoundException, SQLException {

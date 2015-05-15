@@ -46,9 +46,9 @@
 				<div class="bottombox">
 				<br>
 					 <a class ="imgs" href="/mysite/views/board/wirte.jsp"><img src="/mysite/views/board/images/write.png" alt="글쓰기"></a>
-					 <a class ="imgs" href="/mysite/views/board/modify.jsp"><img src="/mysite/views/board/images/modify.png" alt="글수정"></a> 
+					 <a class ="imgs" href="/mysite/bd?a=modify&no=${select.no }"><img src="/mysite/views/board/images/modify.png" alt="글수정"></a> 
 					 <a class ="imgs" href=""><img src="/mysite/views/board/images/delete.png" alt="삭제"></a> 
-					 <a class ="imgs" href="list.jsp"><img src="/mysite/views/board/images/list.png" alt="리스트"></a>
+					 <a class ="imgs" href="/mysite/bd"><img src="/mysite/views/board/images/list.png" alt="리스트"></a>
 				</div>
 				
 				<!-- <div class="list">

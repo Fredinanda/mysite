@@ -28,6 +28,10 @@ public class ActionFactory {
 			action = new insertAction();
 		}else if("read".equals(a)){
 			action = new readAction();
+		}else if("modify".equals(a)){
+			action = new modifyAction();
+		}else if("update".equals(a)){
+			action = new modifyAction();
 		}
 		
 		

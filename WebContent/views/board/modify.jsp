@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-   pageEncoding="EUC-KR"%>
+<%@ page contentType="text/html;charset=UTF-8" %>
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -25,30 +24,32 @@
 		
 		<div id="content">
 			<br>
-		
+			<form action="/mysite/bd" method="post">
+					<input type="hidden" name="a" value="update">
+					<input type="hidden" value="${authMember.no}" id="member_no" name="member_no">
+					<input type="hidden" value="${authMember.name}"id="member_name" name="member_name"> 
 			<div class="title">
-			Á¦¸ñ
-			<input type="text" size="69">
+			ì œëª©
+			<input type="text" size="69" name="title" value="${update.title}">
 			</div>
 			
 			<div class="text">
-			³»¿ë
-			<TEXTAREA NAME=txtComment COLS=71 ROWS=10></TEXTAREA>
+			ë‚´ìš©
+			<TEXTAREA NAME=txt id=txt COLS=71 ROWS=10>${update.content }</TEXTAREA>
 			</div>
 			<div>
 			<br>
 			<div align="right">
-				<a href="">
-				<img class="imgs" src="/mysite/views/board/images/write.png" alt="±Û¼öÁ¤">
-				</a>  
 				
+				<input class= "imgs" type="image" src="/mysite/views/board/images/write.png" value="write">
+							
 				<a href ="/mysite/views/board/list.jsp">
-				<img class="imgs" src="/mysite/views/board/images/cancel.png" alt="Ãë¼Ò">
+				<img class="imgs" src="/mysite/views/board/images/cancel.png" alt="ï¿½ï¿½ï¿½">
 				</a>
-			
 			</div>
 			<Br>
 			</div>
+			</form>
 		
 		</div>
 			

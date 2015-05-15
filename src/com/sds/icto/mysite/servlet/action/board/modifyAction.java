@@ -12,7 +12,7 @@ import com.sds.icto.mysite.board.vo.boardVo;
 import com.sds.icto.web.Action;
 import com.sds.icto.web.WebUtil;
 
-public class readAction implements Action {
+public class modifyAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response)
@@ -28,10 +28,8 @@ public class readAction implements Action {
 	
 		
 		
-		request.setAttribute("select", view);
-		
-		WebUtil.forward( "/views/board/select.jsp", request, response);
-
+		request.setAttribute("update", view);
+		WebUtil.forward( "/views/board/modify.jsp", request, response);
 	}
 
 }
