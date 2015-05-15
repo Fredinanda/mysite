@@ -18,7 +18,7 @@ public class insertAction implements Action {
 			throws SQLException, ClassNotFoundException, ServletException,
 			IOException {
 		// TODO Auto-generated method stub
-		// 한글처리
+				// 한글처리
 				request.setCharacterEncoding( "utf-8" );
 
 				// 메세지 등록

@@ -2,7 +2,6 @@ package com.sds.icto.mysite.servlet.action.board;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -13,21 +12,25 @@ import com.sds.icto.mysite.board.vo.boardVo;
 import com.sds.icto.web.Action;
 import com.sds.icto.web.WebUtil;
 
-public class indexAction implements Action {
+public class readAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ClassNotFoundException, ServletException,
 			IOException {
-		
+		// TODO Auto-generated method stub
 		boardDao dao = new boardDao();
-		List<boardVo> list = dao.fetchList();
-		request.setAttribute("List", list);
+		boardVo vo = new boardVo();
 		
-		WebUtil.forward( 
-				"/views/board/list.jsp" ,
-				request,
-				response );
+		long no = Long.parseLong(request.getParameter("no"));
+		vo.setNo(no);
+		boardVo view = dao.read(no);
+	
+		System.out.println(view);
+		
+		request.setAttribute("select", view);
+		
+		WebUtil.forward( "/views/board/select.jsp", request, response);
 
 	}
 

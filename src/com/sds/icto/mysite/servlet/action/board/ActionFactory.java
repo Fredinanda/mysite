@@ -1,6 +1,7 @@
 package com.sds.icto.mysite.servlet.action.board;
 
 import com.sds.icto.mysite.servlet.action.board.ActionFactory;
+
 import com.sds.icto.web.Action;
 
 public class ActionFactory {
@@ -22,6 +23,12 @@ public class ActionFactory {
 	
 	public Action getAction( String a ) {
 		Action action = null;
+		
+		if( "insert".equals( a )){
+			action = new insertAction();
+		}else if("read".equals(a)){
+			action = new readAction();
+		}
 		
 		
 		if(action == null){

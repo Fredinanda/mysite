@@ -1,12 +1,9 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
-<%@ page import="com.sds.icto.mysite.guestbook.dao.*" %>
-<%@ page import="com.sds.icto.mysite.guestbook.vo.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page import="java.util.List" %>
-<%
-	GuestbookDao dao = new GuestbookDao();
-	List<GuestbookVo> list = dao.fetchList(); 
-%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%> 
+<%@ page contentType="text/html;charset=UTF-8" %>
+<% pageContext.setAttribute("newLineChar", "\n"); %>
+
 <!doctype html>
 <html>
 <head>
@@ -38,34 +35,28 @@
 				</form>
 				<ul>
 					<li>
-								<%
-			int index = 0;
-			for( GuestbookVo vo : list ){
-				index++;
-			%>
-			<%-- <c:forEach items="${list }" var="vo">  
+		
+			<c:forEach items="${list }"  var="vo" varStatus="status">
 			
 			
-			</c:forEach>
-			--%>
 			
 			<br>
 			<table width=510 border=1>
 				<tr>
-					<td>[<%=index %>]</td>
-					<td><%=vo.getName() %></td>
-					<td><%=vo.getRegDate() %></td>
-					<td><a href="/mysite/views/guestbook/deleteform.jsp?no=<%=vo.getNo() %>">삭제</a></td>
+					<td>[${status.count}]</td>
+					<td> ${vo.name }</td>
+					<td> ${vo.regDate}</td>
+					<td><a href="/mysite/views/guestbook/deleteform.jsp?no=${vo.no}">삭제</a></td>
 				</tr>
 				<tr>
 					<td colspan=4>
-						<%=vo.getMessage() %>
+						${fn:replace( vo.message, newLineChar, "<br>" ) }
 					</td>
 				</tr>
 			</table>
-			<%
-			}
-			%>
+		
+			</c:forEach>
+		
 						<br>
 					</li>
 				</ul>

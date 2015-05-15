@@ -8,6 +8,7 @@ public class boardVo {
 	private String memberName;
 	private Long viewCnt;
 	private String date;
+	
 	public Long getNo() {
 		return no;
 	}
