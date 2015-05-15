@@ -31,7 +31,9 @@ public class ActionFactory {
 		}else if("modify".equals(a)){
 			action = new modifyAction();
 		}else if("update".equals(a)){
-			action = new modifyAction();
+			action = new updateAction();
+		}else if("delete".equals(a)){
+			action = new deleteAction();
 		}
 		
 		

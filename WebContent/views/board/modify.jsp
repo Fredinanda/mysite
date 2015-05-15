@@ -27,7 +27,8 @@
 			<form action="/mysite/bd" method="post">
 					<input type="hidden" name="a" value="update">
 					<input type="hidden" value="${authMember.no}" id="member_no" name="member_no">
-					<input type="hidden" value="${authMember.name}"id="member_name" name="member_name"> 
+					<input type="hidden" value="${authMember.name}"id="member_name" name="member_name">
+					<input type="hidden" value="${$update.no}"id="no" name="no"> 
 			<div class="title">
 			제목
 			<input type="text" size="69" name="title" value="${update.title}">

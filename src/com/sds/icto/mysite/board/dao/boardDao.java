@@ -133,6 +133,21 @@ public class boardDao {
 			}
 		}
 		
+		public void delete(long no) throws ClassNotFoundException, SQLException {
+			Connection conn = getConnection();
+			Statement stmt = conn.createStatement();
+			String sql = "delete from board where no=?";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setLong(1, no);
+			
+			pstmt.executeUpdate();
+			if (stmt != null) {
+				stmt.close();
+			}
+			if (conn != null) {
+				conn.close();
+			}
+		}
 	
 	private Connection getConnection()
 			throws ClassNotFoundException, SQLException {
