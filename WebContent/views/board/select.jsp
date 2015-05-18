@@ -45,9 +45,9 @@
 				
 				<div class="bottombox">
 				<br>
-					 <a class ="imgs" href="/mysite/views/board/wirte.jsp"><img src="/mysite/views/board/images/write.png" alt="글쓰기"></a>
-					 <a class ="imgs" href="/mysite/bd?a=modify&no=${select.no }"><img src="/mysite/views/board/images/modify.png" alt="글수정"></a> 
-					 <a class ="imgs" href="/mysite/bd?a=delete&no=${select.no }"><img src="/mysite/views/board/images/delete.png" alt="삭제"></a> 
+					 	<c:if test="${authMember.name !=null }" ><a class ="imgs" href="/mysite/views/board/wirte.jsp"><img src="/mysite/views/board/images/write.png" alt="글쓰기"></a></c:if>
+					 <c:if test="${authMember.name == select.memberName }"><a class ="imgs" href="/mysite/bd?a=modify&no=${select.no }"><img src="/mysite/views/board/images/modify.png" alt="글수정"></a></c:if> 
+					 <c:if test="${authMember.name == select.memberName }"> <a class ="imgs" href="/mysite/bd?a=delete&no=${select.no }"><img src="/mysite/views/board/images/delete.png" alt="삭제"></a></c:if> 
 					 <a class ="imgs" href="/mysite/bd"><img src="/mysite/views/board/images/list.png" alt="리스트"></a>
 				</div>
 				

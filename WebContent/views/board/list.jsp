@@ -22,13 +22,7 @@
 			<div id="header">
 				<jsp:include page = "/views/include/header.jsp" flush="false"/>
 			</div>
-				<div id="navigation">
 			
-					<c:import url="/views/include/navigation.jsp" >
-					<c:param name="type" value="guest"></c:param>
-					</c:import>
-				
-				</div>
 		
 		
 		
@@ -60,7 +54,11 @@
 			<div class="page"> 1 </div>
 			
 			<div class="write">
+			<c:if test="${authMember.name !=null }" >
 			<a href="/mysite/views/board/wirte.jsp"><img src="/mysite/views/board/images/write.png"></a>
+			</c:if>
+	
+			
 			<br>
 			</div>
 			
@@ -68,8 +66,16 @@
 	
 		
 	</div>
+		<div id="navigation">
+		
+			<c:import url="/views/include/navigation.jsp" >
+				<c:param name="type" value="board"></c:param>
+			</c:import>
+		</div>
+
 	<div id="footer">
 			<c:import url="/views/include/footer.jsp"></c:import>
+			
 		</div>	
 		
 	</div>

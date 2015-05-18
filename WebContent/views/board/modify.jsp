@@ -28,9 +28,9 @@
 					<input type="hidden" name="a" value="update">
 					<input type="hidden" value="${authMember.no}" id="member_no" name="member_no">
 					<input type="hidden" value="${authMember.name}"id="member_name" name="member_name">
-					<input type="hidden" value="${$update.no}"id="no" name="no"> 
+					<input type="hidden" value="${update.no}"id="no" name="no"> 
 			<div class="title">
-			제목
+			제목 
 			<input type="text" size="69" name="title" value="${update.title}">
 			</div>
 			
@@ -45,7 +45,7 @@
 				<input class= "imgs" type="image" src="/mysite/views/board/images/write.png" value="write">
 							
 				<a href ="/mysite/views/board/list.jsp">
-				<img class="imgs" src="/mysite/views/board/images/cancel.png" alt="���">
+				<img class="imgs" src="/mysite/views/board/images/cancel.png" alt="tt">
 				</a>
 			</div>
 			<Br>

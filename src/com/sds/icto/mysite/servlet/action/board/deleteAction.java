@@ -23,8 +23,7 @@ public class deleteAction implements Action {
 		Long no = Long.parseLong(request.getParameter("no"));
 		
 		vo.setNo(no);
-		
-		
+			
 		
 		dao.delete(no);
 	

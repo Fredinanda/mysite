@@ -93,8 +93,11 @@ public class boardDao {
 				String content2 = rs.getString(3);
 				Long memberNo2 = rs.getLong(4);
 				String memberName2 = rs.getString(5);
-				String date2 = rs.getString(6);
-								
+				String date2 = rs.getString(7);
+				Long viewCnt = rs.getLong(6);
+				
+				viewCnt++;
+				
 				vo = new boardVo();
 				vo.setNo(no2);
 				vo.setTitle(title2);
@@ -102,6 +105,7 @@ public class boardDao {
 				vo.setMemberNo(memberNo2);
 				vo.setMemberName(memberName2);
 				vo.setDate(date2);
+				vo.setViewCnt(viewCnt);
 			}
 			if (rs != null) {
 				rs.close();
@@ -122,6 +126,7 @@ public class boardDao {
 			pstmt.setString(1, update.getTitle());
 			pstmt.setString(2, update.getContent());
 			pstmt.setLong(3, update.getNo());
+			
 			pstmt.executeUpdate();
 			
 			if (pstmt != null) {

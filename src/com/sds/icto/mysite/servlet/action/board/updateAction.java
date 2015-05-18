@@ -18,6 +18,7 @@ public class updateAction implements Action {
 			throws SQLException, ClassNotFoundException, ServletException,
 			IOException {
 		// TODO Auto-generated method stub
+		
 		Long no = Long.parseLong(request.getParameter("no"));
 		String title = request.getParameter("title");
 		String content = request.getParameter("txt");
